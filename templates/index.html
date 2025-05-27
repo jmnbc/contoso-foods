@@ -1,7 +1,5 @@
 {% extends "base.html" %}
-
 {% block title %}Contoso Foods - Fresh & Quality Products{% endblock %}
-
 {% block content %}
 <!-- Hero Section -->
 <section class="hero-section">
@@ -25,12 +23,12 @@
         <div class="category-buttons">
             <a href="{{ url_for('index') }}" 
                class="category-btn {% if not selected_category %}active{% endif %}">
-                All Products
+               All Products
             </a>
             {% for category in categories %}
                 <a href="{{ url_for('index', category=category) }}" 
                    class="category-btn {% if selected_category == category %}active{% endif %}">
-                    {{ category }}
+                   {{ category }}
                 </a>
             {% endfor %}
         </div>
@@ -60,7 +58,7 @@
         {% for product in products %}
             <div class="card h-100">
                 <div class="position-relative">
-                    <img src="{{ url_for('static', filename='images/' + product.image) }}" 
+                    <img src="{{ url_for('static', filename='images/' + product.image.replace('-icon', '-hero')) }}" 
                          class="card-img-top" 
                          alt="{{ product.name }}"
                          onerror="this.src='{{ url_for('static', filename='images/empty-icon.png') }}'">
@@ -73,7 +71,7 @@
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text flex-grow-1">{{ product.description }}</p>
                     <div class="price">${{ "%.2f"|format(product.price) }}</div>
-                    
+                
                     <div class="d-flex gap-2">
                         <a href="{{ url_for('product_detail', product_id=product.id) }}" 
                            class="btn btn-primary flex-fill">
@@ -122,4 +120,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-{% endblock %} 
+{% endblock %}
