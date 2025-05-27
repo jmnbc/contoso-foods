@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-
-{% block title %}Contoso Foods - Fresh & Quality Products{% endblock %}
+{% block title %}
+Contoso Foods - Fresh & Quality Products{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
@@ -50,7 +50,7 @@
             {% else %}
                 <h3 class="page-title">All Products</h3>
             {% endif %}
-            
+
             <p class="text-muted">{{ products|length }} product{% if products|length != 1 %}s{% endif %} found</p>
         </div>
     </div>
@@ -60,7 +60,7 @@
         {% for product in products %}
             <div class="card h-100">
                 <div class="position-relative">
-                    <img src="{{ url_for('static', filename='images/' + product.image) }}" 
+                    <img src="{{ url_for('static', filename='images/' + product.image.replace('-icon', '-hero')) }}" 
                          class="card-img-top" 
                          alt="{{ product.name }}"
                          onerror="this.src='{{ url_for('static', filename='images/empty-icon.png') }}'">
@@ -122,4 +122,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-{% endblock %} 
+{% endblock %}
