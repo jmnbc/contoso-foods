@@ -60,7 +60,7 @@
         {% for product in products %}
             <div class="card h-100">
                 <div class="position-relative">
-                    <img src="{{ url_for('static', filename='images/' + product.image) }}" 
+                    <img src="{{ url_for('static', filename='images/' + product.image.replace('-icon', '-hero')) }}" 
                          class="card-img-top" 
                          alt="{{ product.name }}"
                          onerror="this.src='{{ url_for('static', filename='images/empty-icon.png') }}'">
@@ -122,4 +122,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-{% endblock %} 
+{% endblock %}
