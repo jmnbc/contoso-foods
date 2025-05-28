@@ -1,7 +1,5 @@
 {% extends "base.html" %}
-
 {% block title %}Contoso Foods - Fresh & Quality Products{% endblock %}
-
 {% block content %}
 <!-- Hero Section -->
 <section class="hero-section">
@@ -60,10 +58,10 @@
         {% for product in products %}
             <div class="card h-100">
                 <div class="position-relative">
-                    <img src="{{ url_for('static', filename='images/' + product.image) }}" 
+                    <img src="{{ url_for('static', filename='images/' + product.image.replace('-icon', '-hero')) }}" 
                          class="card-img-top" 
                          alt="{{ product.name }}"
-                         onerror="this.src='{{ url_for('static', filename='images/empty-icon.png') }}'">
+                         onerror="this.src='{{ url_for('static', filename='images/empty-icon.png') }}'"><!-- updated reference from -icon to -hero -->
                     <div class="position-absolute top-0 end-0 m-2">
                         <span class="badge bg-primary">{{ product.category }}</span>
                     </div>
@@ -122,4 +120,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-{% endblock %} 
+{% endblock %}
