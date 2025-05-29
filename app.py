@@ -198,10 +198,10 @@ def index():
         filtered_products = PRODUCTS
     
     return render_template('index.html', 
-                         products=filtered_products,
-                         categories=categories,
-                         selected_category=selected_category,
-                         cart_count=get_cart_count())
+                           products=filtered_products,
+                           categories=categories,
+                           selected_category=selected_category,
+                           cart_count=get_cart_count())
 
 @app.route('/product/<int:product_id>')
 def product_detail(product_id):
@@ -211,9 +211,9 @@ def product_detail(product_id):
         return redirect(url_for('index'))
     
     return render_template('product_detail.html', 
-                         product=product,
-                         products=PRODUCTS,
-                         cart_count=get_cart_count())
+                           product=product,
+                           products=PRODUCTS,
+                           cart_count=get_cart_count())
 
 @app.route('/add_to_cart/<int:product_id>')
 def add_to_cart(product_id):
@@ -266,10 +266,10 @@ def cart():
     total = get_cart_total()
     
     return render_template('cart.html',
-                         cart_items=cart_items,
-                         total=total,
-                         cart_count=get_cart_count(),
-                         products=PRODUCTS)
+                           cart_items=cart_items,
+                           total=total,
+                           cart_count=get_cart_count(),
+                           products=PRODUCTS)
 
 @app.route('/clear_cart')
 def clear_cart():
@@ -283,4 +283,4 @@ def api_cart_count():
     return jsonify({'count': get_cart_count()})
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000) 
+    app.run(debug=True, host='0.0.0.0', port=5000)
