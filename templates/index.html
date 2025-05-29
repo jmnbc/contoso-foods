@@ -1,7 +1,5 @@
 {% extends "base.html" %}
-
 {% block title %}Contoso Foods - Fresh & Quality Products{% endblock %}
-
 {% block content %}
 <!-- Hero Section -->
 <section class="hero-section">
@@ -17,25 +15,24 @@
         </div>
     </div>
 </section>
-
 <div class="container">
     <!-- Category Filter -->
     <div class="category-filter">
         <h5 class="mb-3"><i class="fas fa-filter"></i> Filter by Category</h5>
         <div class="category-buttons">
             <a href="{{ url_for('index') }}" 
-               class="category-btn {% if not selected_category %}active{% endif %}">
+                class="category-btn {% if not selected_category %}active{% endif %}">
                 All Products
             </a>
             {% for category in categories %}
                 <a href="{{ url_for('index', category=category) }}" 
-                   class="category-btn {% if selected_category == category %}active{% endif %}">
+                    class="category-btn {% if selected_category == category %}active{% endif %}">
                     {{ category }}
                 </a>
             {% endfor %}
         </div>
     </div>
-
+    
     <!-- Products Section -->
     <div class="row">
         <div class="col-12">
@@ -51,7 +48,7 @@
                 <h3 class="page-title">All Products</h3>
             {% endif %}
             
-            <p class="text-muted">{{ products|length }} product{% if products|length != 1 %}s{% endif %} found</p>
+            <p class="text-muted">{{ products|length }} products{% if products|length != 1 %}s{% endif %} found</p>
         </div>
     </div>
 
@@ -60,10 +57,10 @@
         {% for product in products %}
             <div class="card h-100">
                 <div class="position-relative">
-                    <img src="{{ url_for('static', filename='images/' + product.image) }}" 
+                    <img src="{{ url_for('static', filename='images/' + product.image.replace('-icon', '-hero')) }}" 
                          class="card-img-top" 
                          alt="{{ product.name }}"
-                         onerror="this.src='{{ url_for('static', filename='images/empty-icon.png') }}'">
+                         onerror="this.src='{{ url_for('static', filename='images/empty-hero.png') }}'">
                     <div class="position-absolute top-0 end-0 m-2">
                         <span class="badge bg-primary">{{ product.category }}</span>
                     </div>
@@ -122,4 +119,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-{% endblock %} 
+{% endblock %}
