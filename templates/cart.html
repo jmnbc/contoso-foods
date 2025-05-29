@@ -14,7 +14,7 @@
     <tbody>
         {% for item in cart_items %}
         <tr>
-            <!-- Image part with hero reference update -->
+            <!-- Updated image reference from '-icon' to '-hero' -->
             <td><img src="{{ url_for('static', filename=item.product.hero_image) }}" alt="{{ item.product.name }}"><br>{{ item.product.name }}</td>
             <td>{{ item.quantity }}</td>
             <td>${{ item.subtotal }}</td>
