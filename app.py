@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your-secret-key-here'
+app.config['SECRET_KEY'] = 'your-secret-key-hero'
 app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
 
@@ -14,7 +14,7 @@ PRODUCTS = [
         'id': 1,
         'name': 'Fresh Bagel',
         'price': 2.50,
-        'image': 'bagel-icon.png',
+        'image': 'bagel-hero.png',
         'hero_image': 'bagel-hero.png',
         'category': 'Bakery',
         'description': 'Freshly baked artisanal bagel, perfect for breakfast'
@@ -23,7 +23,7 @@ PRODUCTS = [
         'id': 2,
         'name': 'Organic Banana',
         'price': 0.75,
-        'image': 'banana-icon.png',
+        'image': 'banana-hero.png',
         'hero_image': 'banana-hero.png',
         'category': 'Fruits',
         'description': 'Sweet, ripe organic bananas packed with potassium'
@@ -32,7 +32,7 @@ PRODUCTS = [
         'id': 3,
         'name': 'Premium Butter',
         'price': 4.99,
-        'image': 'butter-icon.png',
+        'image': 'butter-hero.png',
         'hero_image': 'butter-hero.png',
         'category': 'Dairy',
         'description': 'Creamy, rich butter made from farm-fresh cream'
@@ -41,7 +41,7 @@ PRODUCTS = [
         'id': 4,
         'name': 'Caesar Salad Kit',
         'price': 6.99,
-        'image': 'caesar-icon.png',
+        'image': 'caesar-hero.png',
         'hero_image': 'caesar-hero.png',
         'category': 'Ready Meals',
         'description': 'Complete Caesar salad kit with dressing and croutons'
@@ -50,7 +50,7 @@ PRODUCTS = [
         'id': 5,
         'name': 'Artisan Cheese',
         'price': 8.99,
-        'image': 'cheese-icon.png',
+        'image': 'cheese-hero.png',
         'hero_image': 'cheese-hero.png',
         'category': 'Dairy',
         'description': 'Aged artisan cheese with complex flavors'
@@ -59,7 +59,7 @@ PRODUCTS = [
         'id': 6,
         'name': 'Ruby Grapefruit',
         'price': 1.25,
-        'image': 'grapefruit-icon.png',
+        'image': 'grapefruit-hero.png',
         'hero_image': 'grapefruit-hero.png',
         'category': 'Fruits',
         'description': 'Juicy ruby red grapefruit, rich in vitamin C'
@@ -68,7 +68,7 @@ PRODUCTS = [
         'id': 7,
         'name': 'Greek Yogurt',
         'price': 3.99,
-        'image': 'greek-yogurt-icon.png',
+        'image': 'greek-yogurt-hero.png',
         'hero_image': 'greek-yogurt-hero.png',
         'category': 'Dairy',
         'description': 'Thick, creamy Greek yogurt with live cultures'
@@ -77,7 +77,7 @@ PRODUCTS = [
         'id': 8,
         'name': 'Green Onions',
         'price': 1.50,
-        'image': 'green-onion-icon.png',
+        'image': 'green-onion-hero.png',
         'hero_image': 'green-onion-hero.png',
         'category': 'Vegetables',
         'description': 'Fresh green onions, perfect for garnishing'
@@ -86,7 +86,7 @@ PRODUCTS = [
         'id': 9,
         'name': 'Classic Hummus',
         'price': 4.49,
-        'image': 'hummus-icon.png',
+        'image': 'hummus-hero.png',
         'hero_image': 'hummus-hero.png',
         'category': 'Dips & Spreads',
         'description': 'Smooth, creamy hummus made with chickpeas and tahini'
@@ -95,7 +95,7 @@ PRODUCTS = [
         'id': 10,
         'name': 'KitKat Chocolate',
         'price': 1.99,
-        'image': 'kitkat-icon.png',
+        'image': 'kitkat-hero.png',
         'hero_image': 'kitkat-hero.png',
         'category': 'Snacks',
         'description': 'Crispy wafer bars covered in milk chocolate'
@@ -104,7 +104,7 @@ PRODUCTS = [
         'id': 11,
         'name': 'Fresh Lemon',
         'price': 0.50,
-        'image': 'lemon-icon.png',
+        'image': 'lemon-hero.png',
         'hero_image': 'lemon-hero.png',
         'category': 'Fruits',
         'description': 'Bright, zesty lemons perfect for cooking and drinks'
@@ -113,7 +113,7 @@ PRODUCTS = [
         'id': 12,
         'name': 'Sweet Mandarin',
         'price': 0.85,
-        'image': 'mandarin-icon.png',
+        'image': 'mandarin-hero.png',
         'hero_image': 'mandarin-hero.png',
         'category': 'Fruits',
         'description': 'Sweet, easy-to-peel mandarin oranges'
@@ -122,7 +122,7 @@ PRODUCTS = [
         'id': 13,
         'name': 'Yellow Onion',
         'price': 1.25,
-        'image': 'onion-icon.png',
+        'image': 'onion-hero.png',
         'hero_image': 'onion-hero.png',
         'category': 'Vegetables',
         'description': 'Fresh yellow onions, a kitchen essential'
@@ -131,7 +131,7 @@ PRODUCTS = [
         'id': 14,
         'name': 'Dinner Plates Set',
         'price': 24.99,
-        'image': 'plates-icon.png',
+        'image': 'plates-hero.png',
         'hero_image': 'plates-hero.png',
         'category': 'Kitchenware',
         'description': 'Elegant ceramic dinner plates, set of 4'
@@ -140,7 +140,7 @@ PRODUCTS = [
         'id': 15,
         'name': 'Red Bell Pepper',
         'price': 2.25,
-        'image': 'red-pepper-icon.png',
+        'image': 'red-pepper-hero.png',
         'hero_image': 'red-pepper-hero.png',
         'category': 'Vegetables',
         'description': 'Crisp, sweet red bell peppers'
@@ -149,7 +149,7 @@ PRODUCTS = [
         'id': 16,
         'name': 'Sour Cream',
         'price': 3.49,
-        'image': 'sour-cream-icon.png',
+        'image': 'sour-cream-hero.png',
         'hero_image': 'sour-cream-hero.png',
         'category': 'Dairy',
         'description': 'Rich, tangy sour cream for cooking and dipping'
@@ -158,7 +158,7 @@ PRODUCTS = [
         'id': 17,
         'name': 'Fresh Strawberries',
         'price': 4.99,
-        'image': 'strawberry-icon.png',
+        'image': 'strawberry-hero.png',
         'hero_image': 'strawberry-hero.png',
         'category': 'Fruits',
         'description': 'Sweet, juicy strawberries perfect for desserts'
@@ -198,10 +198,10 @@ def index():
         filtered_products = PRODUCTS
     
     return render_template('index.html', 
-                         products=filtered_products,
-                         categories=categories,
-                         selected_category=selected_category,
-                         cart_count=get_cart_count())
+                            products=filtered_products,
+                            categories=categories,
+                            selected_category=selected_category,
+                            cart_count=get_cart_count())
 
 @app.route('/product/<int:product_id>')
 def product_detail(product_id):
@@ -211,9 +211,9 @@ def product_detail(product_id):
         return redirect(url_for('index'))
     
     return render_template('product_detail.html', 
-                         product=product,
-                         products=PRODUCTS,
-                         cart_count=get_cart_count())
+                           product=product,
+                           products=PRODUCTS,
+                           cart_count=get_cart_count())
 
 @app.route('/add_to_cart/<int:product_id>')
 def add_to_cart(product_id):
@@ -266,10 +266,10 @@ def cart():
     total = get_cart_total()
     
     return render_template('cart.html',
-                         cart_items=cart_items,
-                         total=total,
-                         cart_count=get_cart_count(),
-                         products=PRODUCTS)
+                           cart_items=cart_items,
+                           total=total,
+                           cart_count=get_cart_count(),
+                           products=PRODUCTS)
 
 @app.route('/clear_cart')
 def clear_cart():
@@ -283,4 +283,4 @@ def api_cart_count():
     return jsonify({'count': get_cart_count()})
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000) 
+    app.run(debug=True, host='0.0.0.0', port=5000)
