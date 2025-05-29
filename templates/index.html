@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-
-{% block title %}Contoso Foods - Fresh & Quality Products{% endblock %}
+{% block title %}
+Contoso Foods - Fresh & Quality Products{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
@@ -24,9 +24,7 @@
         <h5 class="mb-3"><i class="fas fa-filter"></i> Filter by Category</h5>
         <div class="category-buttons">
             <a href="{{ url_for('index') }}" 
-               class="category-btn {% if not selected_category %}active{% endif %}">
-                All Products
-            </a>
+               class="category-btn {% if not selected_category %}active{% endif %}">All Products</a>
             {% for category in categories %}
                 <a href="{{ url_for('index', category=category) }}" 
                    class="category-btn {% if selected_category == category %}active{% endif %}">
@@ -60,7 +58,7 @@
         {% for product in products %}
             <div class="card h-100">
                 <div class="position-relative">
-                    <img src="{{ url_for('static', filename='images/' + product.image) }}" 
+                    <img src="{{ url_for('static', filename='images/' + product.hero_image) }}" 
                          class="card-img-top" 
                          alt="{{ product.name }}"
                          onerror="this.src='{{ url_for('static', filename='images/empty-icon.png') }}'">
@@ -122,4 +120,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-{% endblock %} 
+{% endblock %}
