@@ -60,10 +60,10 @@
         {% for product in products %}
             <div class="card h-100">
                 <div class="position-relative">
-                    <img src="{{ url_for('static', filename='images/' + product.image) }}" 
+                    <img src="{{ url_for('static', filename='images/' + product.hero_image) }}" 
                          class="card-img-top" 
                          alt="{{ product.name }}"
-                         onerror="this.src='{{ url_for('static', filename='images/empty-icon.png') }}'">
+                         onerror="this.src='{{ url_for('static', filename='images/' + product.image) }}'">
                     <div class="position-absolute top-0 end-0 m-2">
                         <span class="badge bg-primary">{{ product.category }}</span>
                     </div>

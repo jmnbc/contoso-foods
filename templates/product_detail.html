@@ -116,11 +116,11 @@
                 {% if loop.index <= 4 %}
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="card h-100">
-                            <img src="{{ url_for('static', filename='images/' + related_product.image) }}" 
+                            <img src="{{ url_for('static', filename='images/' + related_product.hero_image) }}" 
                                  class="card-img-top" 
                                  style="height: 150px; object-fit: cover;"
                                  alt="{{ related_product.name }}"
-                                 onerror="this.src='{{ url_for('static', filename='images/empty-icon.png') }}'">
+                                 onerror="this.src='{{ url_for('static', filename='images/' + related_product.image) }}'">
                             <div class="card-body">
                                 <h6 class="card-title">{{ related_product.name }}</h6>
                                 <div class="price text-success">${{ "%.2f"|format(related_product.price) }}</div>

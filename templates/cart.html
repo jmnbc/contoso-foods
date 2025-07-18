@@ -37,11 +37,11 @@
                             <div class="row align-items-center py-3 {% if not loop.last %}border-bottom{% endif %}">
                                 <!-- Product Image -->
                                 <div class="col-md-2 col-3">
-                                    <img src="{{ url_for('static', filename='images/' + item.product.image) }}" 
+                                    <img src="{{ url_for('static', filename='images/' + item.product.hero_image) }}" 
                                          class="img-fluid rounded"
                                          alt="{{ item.product.name }}"
                                          style="max-height: 80px; object-fit: cover;"
-                                         onerror="this.src='{{ url_for('static', filename='images/empty-icon.png') }}'">
+                                         onerror="this.src='{{ url_for('static', filename='images/' + item.product.image) }}'">
                                 </div>
                                 
                                 <!-- Product Details -->
@@ -172,11 +172,11 @@
                         {% for product in products[:4] if products %}
                             <div class="col-lg-3 col-md-6 mb-4">
                                 <div class="card h-100">
-                                    <img src="{{ url_for('static', filename='images/' + product.image) }}" 
+                                    <img src="{{ url_for('static', filename='images/' + product.hero_image) }}" 
                                          class="card-img-top"
                                          style="height: 150px; object-fit: cover;"
                                          alt="{{ product.name }}"
-                                         onerror="this.src='{{ url_for('static', filename='images/empty-icon.png') }}'">
+                                         onerror="this.src='{{ url_for('static', filename='images/' + product.image) }}'">
                                     <div class="card-body text-center">
                                         <h6 class="card-title">{{ product.name }}</h6>
                                         <div class="price text-success mb-2">${{ "%.2f"|format(product.price) }}</div>
